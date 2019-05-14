@@ -9,6 +9,8 @@ class TweetsController < ApplicationController
     @tweet = Tweet.find(params[:id])
     @user = @tweet.user
     @favorites = @user.favorite_tweets
+    @comments = @tweet.comments
+    @comment = current_user.comments.build
   end
 
   def index
